@@ -29,6 +29,9 @@
   #row {
     display: block;
   }
+  #column {
+    display: none;
+  }
   #row .personal__content {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

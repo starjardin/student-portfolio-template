@@ -11,18 +11,37 @@
   transform: scale(1.03);
 }
 
-#skills-row .skills__container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  .skills__header {
-    flex-basis: 100%;
-    padding-block-end: 1rem;
+#skills-column .skills__container {
+  max-width: 400px;
+}
+
+.skills__content {
+  flex-basis: 50%;
+  color: #3da9fc;
+  padding-block: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  progress {
+    width: 60%;
+    grid-column: 2/4;
   }
-  .skills__content {
+}
+
+#skills-row .skills__container {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  #skills-column .skills__container {
+    display: none;
+  }
+  #skills-row .skills__container {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
+    .skills__header {
+      flex-basis: 100%;
+      padding-block-end: 1rem;
+    }
   }
 }
