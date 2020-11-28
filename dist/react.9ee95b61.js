@@ -32165,7 +32165,50 @@ function PersonalDetails() {
 
   return /*#__PURE__*/_react.default.createElement("div", null, content(_personalData.default));
 }
-},{"react":"node_modules/react/index.js","../assets/socrate.jpg":"assets/socrate.jpg","../data/personalData":"data/personalData.js","./styles/StyledPersonalDetails":"components/styles/StyledPersonalDetails.js"}],"react.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../assets/socrate.jpg":"assets/socrate.jpg","../data/personalData":"data/personalData.js","./styles/StyledPersonalDetails":"components/styles/StyledPersonalDetails.js"}],"components/Skills.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Skills;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var skills = [{
+  skill: "Markdwn",
+  value: 30
+}, {
+  skill: "Html5",
+  value: 36
+}, {
+  skill: "css3",
+  value: 60
+}, {
+  skill: "javascript",
+  value: 24
+}, {
+  skill: "react",
+  value: 70
+}];
+
+function Skills() {
+  return /*#__PURE__*/_react.default.createElement("div", null, skills.map(function (skill, index) {
+    return /*#__PURE__*/_react.default.createElement("div", {
+      className: "skills__content",
+      key: index
+    }, /*#__PURE__*/_react.default.createElement("label", {
+      htmlFor: skill.skill
+    }, skill.skill), /*#__PURE__*/_react.default.createElement("progress", {
+      id: skill.skill,
+      max: "100",
+      value: skill.value
+    }, skill.value), ")");
+  }));
+}
+},{"react":"node_modules/react/index.js"}],"react.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -32176,14 +32219,16 @@ var _header = _interopRequireDefault(require("./components/header"));
 
 var _PersonalDetails = _interopRequireDefault(require("./components/PersonalDetails"));
 
+var _Skills = _interopRequireDefault(require("./components/Skills"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_header.default, null), /*#__PURE__*/_react.default.createElement(_PersonalDetails.default, null));
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_header.default, null), /*#__PURE__*/_react.default.createElement(_PersonalDetails.default, null), /*#__PURE__*/_react.default.createElement(_Skills.default, null));
 }
 
 _reactDom.default.render( /*#__PURE__*/_react.default.createElement(App, null), document.querySelector("#root"));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./components/header":"components/header.js","./components/PersonalDetails":"components/PersonalDetails.js"}],"../../AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./components/header":"components/header.js","./components/PersonalDetails":"components/PersonalDetails.js","./components/Skills":"components/Skills.js"}],"../../AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
