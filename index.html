@@ -7,10 +7,6 @@
   <link rel="stylesheet" href="scss/index.scss">
 </head>
 <body>
-  <!-- 
-    TODO
-    1) I can filter project byb tag
-   -->
   <header class="header">
     <div class="header__container">
       <h1 class="header__headign">Hello world</h1>
@@ -23,27 +19,38 @@
         <h2 class="masthead__heading"></h2>
       </div>
     </header>
-    <article class="personal-details">
-      <div class="personal-details__container">
-        <header class="personal-details__header">
-          <h3 class="personal-details__heading"></h3>
-        </header>
-        <img 
-          src="./assets/socrate.jpg" 
-          alt="this is my funny image" 
-          class="personal__image"
-        >
-        <div class="personal__about">
-          <div class="name">Andry Abeille</div>
-          <div class="contact">
-            <p>honey.tantely@Gmail.com</p>
-            <p>(+216) 34 12 3456 78</p>
+    <article class="personal-details row" id="row">
+      <template class="personal-details-template">
+        <div class="personal-details__container">
+          <header class="personal-details__header">
+            <h3 class="personal-details__heading"></h3>
+          </header>
+          <div class="personal__content">
+            <div class="personal__image">
+              <img 
+                src="./assets/socrate.jpg" 
+                alt="this is my funny image" 
+              >
+            </div>
+            <div class="personal__about">
+              <div class="name">
+                <span>Andry Abeille</span>
+                <span>Front-end developer</span>
+              </div>
+              <div class="contact">
+                <p>honey.tantely@Gmail.com</p>
+                <p>(+216) 34 12 3456 78</p>
+              </div>
+            </div>
+            <p class="personal__desc">
+              Front-end developer, who has burning ambitions on tech, I am positive to overcome challenges.
+            </p>
           </div>
         </div>
-        <p class="personal__desc">
-          Front-end developper, who has burning ambitions on tech, I am positive to overcome challenges.
-        </p>
-      </div>
+      </template>
+    </article>
+
+    <article class="personal__details column" id="column">
     </article>
 
     <article class="project">
@@ -60,11 +67,11 @@
       </div>
     </article>
 
-    <article class="skills">
-      <template>
+    <article class="skills" id="skills-row">
+      <template class="skills__content">
         <div class="skills__container">
           <header class="skills__header">
-            <h3 class="skills__heading"></h3>
+            <h3 class="skills__heading">Front-end</h3>
           </header>
           <div class="skills__content">
             <label for="markdown">Markdown</label>
@@ -96,6 +103,8 @@
       </template>
     </article>
 
+    <article class="skills" id="skills-column"></article>
+
     <article class="experiencies">
       <div class="experiencies__container">
         <header class="experiencies__header">
@@ -105,5 +114,6 @@
       </div>
     </article>
   </main>
+  <script src="./js/index.js"></script>
 </body>
 </html>

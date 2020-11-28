@@ -117,79 +117,23 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../../AppData/Roaming/npm/node_modules/parcel/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
+})({"js/index.js":[function(require,module,exports) {
+var personalDetaislRow = document.querySelector("#row");
+var personalDetaislColumn = document.querySelector("#column");
+var personalDetailsTemplate = document.querySelector(".personal-details-template");
+var personalDetaislRowContent = document.importNode(personalDetailsTemplate.content, true);
+var personalDetaislColumnContent = document.importNode(personalDetailsTemplate.content, true);
+personalDetaislRow.appendChild(personalDetaislRowContent);
+personalDetaislColumn.appendChild(personalDetaislColumnContent); // Here the skills content
 
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../../AppData/Roaming/npm/node_modules/parcel/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"../../AppData/Roaming/npm/node_modules/parcel/src/builtins/bundle-url.js"}],"scss/index.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./..\\fonts\\Poppins-400.woff":[["Poppins-400.e935a4bb.woff","fonts/Poppins-400.woff"],"fonts/Poppins-400.woff"],"./..\\fonts\\Poppins-300.woff":[["Poppins-300.af955319.woff","fonts/Poppins-300.woff"],"fonts/Poppins-300.woff"],"./..\\fonts\\Poppins-500.woff":[["Poppins-500.6db15a2e.woff","fonts/Poppins-500.woff"],"fonts/Poppins-500.woff"],"./..\\fonts\\Poppins-Black.woff":[["Poppins-Black.ab7e5651.woff","fonts/Poppins-Black.woff"],"fonts/Poppins-Black.woff"],"./..\\fonts\\Poppins-400.woff2":[["Poppins-400.e54b5641.woff2","fonts/Poppins-400.woff2"],"fonts/Poppins-400.woff2"],"./..\\fonts\\Poppins-300.woff2":[["Poppins-300.36d95eb5.woff2","fonts/Poppins-300.woff2"],"fonts/Poppins-300.woff2"],"./..\\fonts\\Poppins-500.woff2":[["Poppins-500.7026f120.woff2","fonts/Poppins-500.woff2"],"fonts/Poppins-500.woff2"],"./..\\fonts\\Poppins-Black.woff2":[["Poppins-Black.88cd5be7.woff2","fonts/Poppins-Black.woff2"],"fonts/Poppins-Black.woff2"],"./..\\fonts\\Heebo-800.woff":[["Heebo-800.5a6ed6b6.woff","fonts/Heebo-800.woff"],"fonts/Heebo-800.woff"],"./..\\fonts\\Heebo-800.woff2":[["Heebo-800.f8706882.woff2","fonts/Heebo-800.woff2"],"fonts/Heebo-800.woff2"],"_css_loader":"../../AppData/Roaming/npm/node_modules/parcel/src/builtins/css-loader.js"}],"../../AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+var skillsRow = document.querySelector("#skills-row");
+var skillsColumn = document.querySelector("#skills-column");
+var skillsTemplate = document.querySelector(".skills__content");
+var skillsRowContent = document.importNode(skillsTemplate.content, true);
+var skillsColumnContent = document.importNode(skillsTemplate.content, true);
+skillsRow.appendChild(skillsRowContent);
+skillsColumn.appendChild(skillsColumnContent);
+},{}],"../../AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -393,5 +337,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/scss.6b84482b.js.map
+},{}]},{},["../../AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js","js/index.js"], null)
+//# sourceMappingURL=/js.00a46daa.js.map

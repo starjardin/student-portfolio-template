@@ -1,0 +1,28 @@
+.skills__container {
+  background-color: #ffff;
+  box-shadow: 1px 1px 5px #094067;
+  padding: 1rem;
+  border-radius: 5px;
+  transition: 0.3s;
+  margin-block: 1rem;
+}
+
+.skills__container:hover {
+  transform: scale(1.03);
+}
+
+#skills-row .skills__container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .skills__header {
+    flex-basis: 100%;
+    padding-block-end: 1rem;
+  }
+  .skills__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
