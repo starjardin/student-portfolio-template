@@ -1,38 +1,37 @@
 import React from 'react'
 import image from '../assets/socrate.jpg'
-import styled from 'styled-components'
 import details from '../data/personalData'
-
-const StyledPersonalDetails = styled.div`
-  background-color : #ccc;
-  span {
-    display : block;
-  }
-`
+import StyledPersonalDetails from './styles/StyledPersonalDetails'
 
 export default function PersonalDetails() {
-  const content = () => {
+  const content = (details) => {
     return (
       <>
         <StyledPersonalDetails>
-          <div>
+          <div className="personal__image">
             <img src={image} alt="my image" />
           </div>
-          <div>
-            <span>{details.firstName} { details.lastName }</span>
-            <span>{ details.background }</span>
+          <div className="personal__about">
+            <div className="name">
+              <span>{details.firstName} { details.lastName }</span>
+              <span>{ details.background }</span>
+            </div>
+            <div className="contact">
+              {details.contact.map((el, index) => <p key={index}>{ el }</p>)}
+            </div>
           </div>
-          <div className="contact">
-            {details.contact.map((el, index) => <p key={index}>{ el }</p>)}
+          <div className="personal__desc">
+            {details.descrition}
           </div>
-          <div>{ details.descrition }</div>
         </StyledPersonalDetails>
       </>
     )
   }
   return (
     <div>
-      {content()}
+      {content(details)}
     </div>
   )
 }
+
+

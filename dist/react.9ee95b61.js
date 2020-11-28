@@ -29772,9 +29772,7 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"assets/socrate.jpg":[function(require,module,exports) {
-module.exports = "/socrate.f1049865.jpg";
-},{}],"node_modules/react-is/cjs/react-is.development.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"node_modules/react-is/cjs/react-is.development.js":[function(require,module,exports) {
 /** @license React v16.13.1
  * react-is.development.js
  *
@@ -32048,7 +32046,40 @@ exports.ServerStyleSheet = Ue;
 "production" !== "development" && "undefined" != typeof navigator && "ReactNative" === navigator.product && console.warn("It looks like you've imported 'styled-components' on React Native.\nPerhaps you're looking to import 'styled-components/native'?\nRead more about this at https://www.styled-components.com/docs/basics#react-native"), "production" !== "development" && "test" !== "development" && (window["__styled-components-init__"] = window["__styled-components-init__"] || 0, 1 === window["__styled-components-init__"] && console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."), window["__styled-components-init__"] += 1);
 var _default = qe;
 exports.default = _default;
-},{"react-is":"node_modules/react-is/index.js","react":"node_modules/react/index.js","shallowequal":"node_modules/shallowequal/index.js","@emotion/stylis":"node_modules/@emotion/stylis/dist/stylis.browser.esm.js","@emotion/unitless":"node_modules/@emotion/unitless/dist/unitless.browser.esm.js","@emotion/is-prop-valid":"node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js","hoist-non-react-statics":"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js","process":"../../AppData/Roaming/npm/node_modules/parcel/node_modules/process/browser.js"}],"data/personalData.js":[function(require,module,exports) {
+},{"react-is":"node_modules/react-is/index.js","react":"node_modules/react/index.js","shallowequal":"node_modules/shallowequal/index.js","@emotion/stylis":"node_modules/@emotion/stylis/dist/stylis.browser.esm.js","@emotion/unitless":"node_modules/@emotion/unitless/dist/unitless.browser.esm.js","@emotion/is-prop-valid":"node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js","hoist-non-react-statics":"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js","process":"../../AppData/Roaming/npm/node_modules/parcel/node_modules/process/browser.js"}],"components/header.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Header;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  color : #fffffe;\n  padding-block : 1rem;\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var StyledHeader = _styledComponents.default.h1(_templateObject());
+
+function Header() {
+  return /*#__PURE__*/_react.default.createElement(StyledHeader, null, "Hello world");
+}
+},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"assets/socrate.jpg":[function(require,module,exports) {
+module.exports = "/socrate.f1049865.jpg";
+},{}],"data/personalData.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32064,26 +32095,20 @@ var details = {
 };
 var _default = details;
 exports.default = _default;
-},{}],"components/PersonalDetails.js":[function(require,module,exports) {
+},{}],"components/styles/StyledPersonalDetails.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = PersonalDetails;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _socrate = _interopRequireDefault(require("../assets/socrate.jpg"));
+exports.default = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
-
-var _personalData = _interopRequireDefault(require("../data/personalData"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  background-color : #ccc;\n  span {\n    display : block;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  background-color : #fff;\n  color : #094067;\n  max-width: 250px;\n  box-shadow: 1px 1px 5px #094067;\n  padding-block: 2rem;\n  padding-inline: 1rem;\n  box-sizing: border-box;\n  border-radius: 5px;\n\n  .personal__about {\n  padding-block: 2rem;\n  .contact {\n    padding-block-start: 1rem;\n  }\n  span {\n    display: block;\n  }\n}\n\n@media (min-width: 620px) {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-template-rows: repeat(2, 1fr);\n  gap: 10px;\n  max-width: 100%;\n  margin-bottom: 2rem;\n\n  .personal__image {\n    img {\n      border-radius : 5px;  \n    }\n    grid-row: 1/3;\n    grid-column: 1/2;\n  }\n\n  .personal__about {\n    grid-column: 2/5;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    padding: 0;\n\n    .contact {\n      display: flex;\n      flex-direction: column;\n      padding: 0;\n    }\n  }\n\n  .personal__desc {\n    margin-top: 0.7rem;\n    grid-row: 2/3;\n    grid-column: 2/5;\n  }\n}\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -32096,39 +32121,69 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var StyledPersonalDetails = _styledComponents.default.div(_templateObject());
 
+var _default = StyledPersonalDetails;
+exports.default = _default;
+},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"components/PersonalDetails.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = PersonalDetails;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _socrate = _interopRequireDefault(require("../assets/socrate.jpg"));
+
+var _personalData = _interopRequireDefault(require("../data/personalData"));
+
+var _StyledPersonalDetails = _interopRequireDefault(require("./styles/StyledPersonalDetails"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function PersonalDetails() {
-  var content = function content() {
-    return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(StyledPersonalDetails, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+  var content = function content(details) {
+    return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_StyledPersonalDetails.default, null, /*#__PURE__*/_react.default.createElement("div", {
+      className: "personal__image"
+    }, /*#__PURE__*/_react.default.createElement("img", {
       src: _socrate.default,
       alt: "my image"
-    })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("span", null, _personalData.default.firstName, " ", _personalData.default.lastName), /*#__PURE__*/_react.default.createElement("span", null, _personalData.default.background)), /*#__PURE__*/_react.default.createElement("div", {
+    })), /*#__PURE__*/_react.default.createElement("div", {
+      className: "personal__about"
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      className: "name"
+    }, /*#__PURE__*/_react.default.createElement("span", null, details.firstName, " ", details.lastName), /*#__PURE__*/_react.default.createElement("span", null, details.background)), /*#__PURE__*/_react.default.createElement("div", {
       className: "contact"
-    }, _personalData.default.contact.map(function (el, index) {
+    }, details.contact.map(function (el, index) {
       return /*#__PURE__*/_react.default.createElement("p", {
         key: index
       }, el);
-    })), /*#__PURE__*/_react.default.createElement("div", null, _personalData.default.descrition)));
+    }))), /*#__PURE__*/_react.default.createElement("div", {
+      className: "personal__desc"
+    }, details.descrition)));
   };
 
-  return /*#__PURE__*/_react.default.createElement("div", null, content());
+  return /*#__PURE__*/_react.default.createElement("div", null, content(_personalData.default));
 }
-},{"react":"node_modules/react/index.js","../assets/socrate.jpg":"assets/socrate.jpg","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../data/personalData":"data/personalData.js"}],"react.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../assets/socrate.jpg":"assets/socrate.jpg","../data/personalData":"data/personalData.js","./styles/StyledPersonalDetails":"components/styles/StyledPersonalDetails.js"}],"react.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
 
 var _reactDom = _interopRequireDefault(require("react-dom"));
 
+var _header = _interopRequireDefault(require("./components/header"));
+
 var _PersonalDetails = _interopRequireDefault(require("./components/PersonalDetails"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_PersonalDetails.default, null));
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_header.default, null), /*#__PURE__*/_react.default.createElement(_PersonalDetails.default, null));
 }
 
 _reactDom.default.render( /*#__PURE__*/_react.default.createElement(App, null), document.querySelector("#root"));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./components/PersonalDetails":"components/PersonalDetails.js"}],"../../AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./components/header":"components/header.js","./components/PersonalDetails":"components/PersonalDetails.js"}],"../../AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
