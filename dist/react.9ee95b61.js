@@ -32165,7 +32165,195 @@ function PersonalDetails() {
 
   return /*#__PURE__*/_react.default.createElement("div", null, content(_personalData.default));
 }
-},{"react":"node_modules/react/index.js","../assets/socrate.jpg":"assets/socrate.jpg","../data/personalData":"data/personalData.js","./styles/StyledPersonalDetails":"components/styles/StyledPersonalDetails.js"}],"components/Skills.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../assets/socrate.jpg":"assets/socrate.jpg","../data/personalData":"data/personalData.js","./styles/StyledPersonalDetails":"components/styles/StyledPersonalDetails.js"}],"components/styles/ProjectsStyle.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  h3 {\n    color : #fff;\n    padding : 1rem 0 0 0;\n  }\n  .project {\n    background-color : #fff;\n    margin-block : 2rem;\n    padding : 2rem 1rem;\n    display : grid;\n    grid-template-columns : repeat(2, 1fr);\n    grid-gap : 2rem;\n  }\n  box-shadow : 1px 1px 5px #333;\n  .anchor {\n    display : inline-block;\n    padding : 0.5rem 1rem;\n    margin : 1rem 1rem 1rem 0;\n    box-shadow : 1px 1px 5px #a7a9be;\n    cursor : pointer;\n  }\n  .anchor:hover {\n    background-color : #ff8906;\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var ProjectsStyle = _styledComponents.default.section(_templateObject());
+
+var _default = ProjectsStyle;
+exports.default = _default;
+},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"components/Projects.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Projects;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _ProjectsStyle = _interopRequireDefault(require("./styles/ProjectsStyle"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Projects(_ref) {
+  var projects = _ref.projects;
+  return /*#__PURE__*/_react.default.createElement(_ProjectsStyle.default, null, /*#__PURE__*/_react.default.createElement("header", null, /*#__PURE__*/_react.default.createElement("h3", null, "Hello world")), projects.map(function (project, index) {
+    return /*#__PURE__*/_react.default.createElement("div", {
+      key: index,
+      className: "project"
+    }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+      src: project.img,
+      alt: "project image"
+    })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, project.tools), /*#__PURE__*/_react.default.createElement("h4", null, project.title), /*#__PURE__*/_react.default.createElement("p", null, project.description), /*#__PURE__*/_react.default.createElement("div", {
+      className: "anchor-container"
+    }, /*#__PURE__*/_react.default.createElement("a", {
+      className: "anchor"
+    }, "Demo"), /*#__PURE__*/_react.default.createElement("a", {
+      className: "anchor"
+    }, "Code"))));
+  }));
+}
+},{"react":"node_modules/react/index.js","./styles/ProjectsStyle":"components/styles/ProjectsStyle.js"}],"data/porjectsData.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _socrate = _interopRequireDefault(require("../assets/socrate.jpg"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var projectsData = [{
+  img: _socrate.default,
+  title: "Recipe blog",
+  tools: "html",
+  description: "This is a recipe blog This is a recipe blog This is a recipe blog This is a recipe blog website",
+  demo: "ur to the demo",
+  code: "url to the code"
+}, {
+  img: _socrate.default,
+  title: "Recipe blog",
+  tools: "css",
+  description: "This is a recipe blog website",
+  demo: "ur to the demo",
+  code: "url to the code"
+}, {
+  img: _socrate.default,
+  title: "Recipe blog",
+  tools: "react",
+  description: "This is a recipe blog website",
+  demo: "ur to the demo",
+  code: "url to the code"
+}];
+var _default = projectsData;
+exports.default = _default;
+},{"../assets/socrate.jpg":"assets/socrate.jpg"}],"components/ProjectsType.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = ProjectsType;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _porjectsData = _interopRequireDefault(require("../data/porjectsData"));
+
+var _Projects = _interopRequireDefault(require("./Projects"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  background-color : #fff;\n  margin : 1rem 0;\n  a {\n    display : inline-block;\n    margin : 1rem 1rem 1rem 0;\n    padding : 0 0.5rem;\n    background-color : #0000ff;\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var ProjectsTypeStyle = _styledComponents.default.div(_templateObject());
+
+function ProjectsType() {
+  var _useState = (0, _react.useState)({}),
+      _useState2 = _slicedToArray(_useState, 2),
+      projects = _useState2[0],
+      setProjects = _useState2[1];
+
+  var _useState3 = (0, _react.useState)([]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      filtereProject = _useState4[0],
+      setFilteredProject = _useState4[1];
+
+  (0, _react.useEffect)(function () {
+    setProjects(_porjectsData.default);
+  }, []);
+  if (!projects.length) return null;
+
+  function htmlProject() {
+    setFilteredProject(projects.filter(function (project) {
+      return project.tools === "html";
+    }));
+  }
+
+  function cssProject() {
+    setFilteredProject(projects.filter(function (project) {
+      return project.tools === "css";
+    }));
+  }
+
+  function react() {
+    setFilteredProject(projects.filter(function (project) {
+      return project.tools === "react";
+    }));
+  }
+
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(ProjectsTypeStyle, null, /*#__PURE__*/_react.default.createElement("h3", null, "Projects"), /*#__PURE__*/_react.default.createElement("button", {
+    onClick: htmlProject
+  }, "Html css"), /*#__PURE__*/_react.default.createElement("button", {
+    onClick: cssProject
+  }, "Javascript"), /*#__PURE__*/_react.default.createElement("button", {
+    onClick: react
+  }, "React")), /*#__PURE__*/_react.default.createElement(_Projects.default, {
+    projects: projects
+  }));
+}
+},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../data/porjectsData":"data/porjectsData.js","./Projects":"components/Projects.js"}],"components/Skills.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32175,7 +32363,31 @@ exports.default = Skills;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n  // background-color : #e53170;\n  box-shadow : 1px 1px 5px #fffffe;\n  max-width : 450px;\n  padding : 1rem;\n  h3 {\n    color : #fffffe;\n    padding-block : 0.5em;\n  }\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  color : #a7a9be;\n  .skills__content {\n    position : relative;\n    padding-block : 0.3rem;\n    progress {\n      position : absolute;\n      left : 30%;\n    }\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var skills = [{
   skill: "Markdwn",
@@ -32194,8 +32406,12 @@ var skills = [{
   value: 70
 }];
 
+var SkillsStyled = _styledComponents.default.div(_templateObject());
+
+var SectionSkills = _styledComponents.default.section(_templateObject2());
+
 function Skills() {
-  return /*#__PURE__*/_react.default.createElement("div", null, skills.map(function (skill, index) {
+  return /*#__PURE__*/_react.default.createElement(SectionSkills, null, /*#__PURE__*/_react.default.createElement("header", null, /*#__PURE__*/_react.default.createElement("h3", null, "Front-end")), /*#__PURE__*/_react.default.createElement(SkillsStyled, null, skills.map(function (skill, index) {
     return /*#__PURE__*/_react.default.createElement("div", {
       className: "skills__content",
       key: index
@@ -32205,10 +32421,10 @@ function Skills() {
       id: skill.skill,
       max: "100",
       value: skill.value
-    }, skill.value), ")");
-  }));
+    }, skill.value));
+  })));
 }
-},{"react":"node_modules/react/index.js"}],"react.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"react.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -32219,16 +32435,20 @@ var _header = _interopRequireDefault(require("./components/header"));
 
 var _PersonalDetails = _interopRequireDefault(require("./components/PersonalDetails"));
 
+var _Projects = _interopRequireDefault(require("./components/Projects"));
+
+var _ProjectsType = _interopRequireDefault(require("./components/ProjectsType"));
+
 var _Skills = _interopRequireDefault(require("./components/Skills"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_header.default, null), /*#__PURE__*/_react.default.createElement(_PersonalDetails.default, null), /*#__PURE__*/_react.default.createElement(_Skills.default, null));
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_header.default, null), /*#__PURE__*/_react.default.createElement(_PersonalDetails.default, null), /*#__PURE__*/_react.default.createElement(_Skills.default, null), /*#__PURE__*/_react.default.createElement(_ProjectsType.default, null));
 }
 
 _reactDom.default.render( /*#__PURE__*/_react.default.createElement(App, null), document.querySelector("#root"));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./components/header":"components/header.js","./components/PersonalDetails":"components/PersonalDetails.js","./components/Skills":"components/Skills.js"}],"../../AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./components/header":"components/header.js","./components/PersonalDetails":"components/PersonalDetails.js","./components/Projects":"components/Projects.js","./components/ProjectsType":"components/ProjectsType.js","./components/Skills":"components/Skills.js"}],"../../AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -32256,7 +32476,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60420" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63193" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
