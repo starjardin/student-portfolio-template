@@ -36,7 +36,7 @@ const SkillsStyled = styled.div`
   }
 `
 const SectionSkills = styled.section`
-  // background-color : #e53170;
+  margin-top : 2rem;
   box-shadow : 1px 1px 5px #fffffe;
   max-width : 450px;
   padding : 1rem;

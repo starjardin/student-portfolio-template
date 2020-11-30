@@ -2,7 +2,8 @@ import React from 'react'
 import ProjectsStyle from './styles/ProjectsStyle'
 
 
-export default function Projects({ projects } ) {
+export default function Projects({ projects }) {
+  console.log(projects);
   return (
     <ProjectsStyle>
       <header>
@@ -14,7 +15,7 @@ export default function Projects({ projects } ) {
             <img src={ project.img } alt="project image"/>
           </div>
           <div>
-            <h3>{ project.tools}</h3>
+            <h4>{ project.tools }</h4>
             <h4>{ project.title }</h4>
             <p>{ project.description}</p>
             <div className="anchor-container">

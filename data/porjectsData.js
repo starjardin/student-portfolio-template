@@ -11,7 +11,7 @@ const projectsData = [
   {
     img :  img ,
     title: "Recipe blog",
-    tools : "css",
+    tools : "javascript",
     description: "This is a recipe blog website",
     demo: "ur to the demo",
     code : "url to the code"

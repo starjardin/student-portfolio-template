@@ -32209,6 +32209,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function Projects(_ref) {
   var projects = _ref.projects;
+  console.log(projects);
   return /*#__PURE__*/_react.default.createElement(_ProjectsStyle.default, null, /*#__PURE__*/_react.default.createElement("header", null, /*#__PURE__*/_react.default.createElement("h3", null, "Hello world")), projects.map(function (project, index) {
     return /*#__PURE__*/_react.default.createElement("div", {
       key: index,
@@ -32216,7 +32217,7 @@ function Projects(_ref) {
     }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
       src: project.img,
       alt: "project image"
-    })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, project.tools), /*#__PURE__*/_react.default.createElement("h4", null, project.title), /*#__PURE__*/_react.default.createElement("p", null, project.description), /*#__PURE__*/_react.default.createElement("div", {
+    })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, project.tools), /*#__PURE__*/_react.default.createElement("h4", null, project.title), /*#__PURE__*/_react.default.createElement("p", null, project.description), /*#__PURE__*/_react.default.createElement("div", {
       className: "anchor-container"
     }, /*#__PURE__*/_react.default.createElement("a", {
       className: "anchor"
@@ -32247,7 +32248,7 @@ var projectsData = [{
 }, {
   img: _socrate.default,
   title: "Recipe blog",
-  tools: "css",
+  tools: "javascript",
   description: "This is a recipe blog website",
   demo: "ur to the demo",
   code: "url to the code"
@@ -32296,7 +32297,7 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  background-color : #fff;\n  margin : 1rem 0;\n  a {\n    display : inline-block;\n    margin : 1rem 1rem 1rem 0;\n    padding : 0 0.5rem;\n    background-color : #0000ff;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  background-color : #fff;\n  margin : 1rem 0;\n  padding : 1rem;\n  button {\n    display : inline-block;\n    margin : 1rem 1rem 1rem 0;\n    padding : 0.5 1rem;\n    background-color :  #ff8906;\n    cursor : pointer;\n    transition : 0.3s;\n    border : 1px solid #ffeeff;\n    border-radius : 4px;\n    box-shadow : 1px 1px 1px 2px #ccc;\n  }\n\n  button:focus,\n  button:hover {\n    background-color :  #0000ff;\n    border : none;\n    outline : none;\n    border-radius : 4px;\n    color : #fff;\n  }\n\n  button:hover {\n    background-color :  #8967ff;\n    transform : scale(1.1)\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -32310,12 +32311,12 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var ProjectsTypeStyle = _styledComponents.default.div(_templateObject());
 
 function ProjectsType() {
-  var _useState = (0, _react.useState)({}),
+  var _useState = (0, _react.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
       projects = _useState2[0],
       setProjects = _useState2[1];
 
-  var _useState3 = (0, _react.useState)([]),
+  var _useState3 = (0, _react.useState)(projects),
       _useState4 = _slicedToArray(_useState3, 2),
       filtereProject = _useState4[0],
       setFilteredProject = _useState4[1];
@@ -32323,34 +32324,31 @@ function ProjectsType() {
   (0, _react.useEffect)(function () {
     setProjects(_porjectsData.default);
   }, []);
+  (0, _react.useEffect)(function () {
+    setFilteredProject(projects);
+  }, [projects]);
   if (!projects.length) return null;
 
-  function htmlProject() {
+  function projectFilter(type) {
     setFilteredProject(projects.filter(function (project) {
-      return project.tools === "html";
-    }));
-  }
-
-  function cssProject() {
-    setFilteredProject(projects.filter(function (project) {
-      return project.tools === "css";
-    }));
-  }
-
-  function react() {
-    setFilteredProject(projects.filter(function (project) {
-      return project.tools === "react";
+      return project.tools === type;
     }));
   }
 
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(ProjectsTypeStyle, null, /*#__PURE__*/_react.default.createElement("h3", null, "Projects"), /*#__PURE__*/_react.default.createElement("button", {
-    onClick: htmlProject
+    onClick: function onClick() {
+      return projectFilter("html");
+    }
   }, "Html css"), /*#__PURE__*/_react.default.createElement("button", {
-    onClick: cssProject
+    onClick: function onClick() {
+      return projectFilter("javascript");
+    }
   }, "Javascript"), /*#__PURE__*/_react.default.createElement("button", {
-    onClick: react
+    onClick: function onClick() {
+      return projectFilter("react");
+    }
   }, "React")), /*#__PURE__*/_react.default.createElement(_Projects.default, {
-    projects: projects
+    projects: filtereProject
   }));
 }
 },{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../data/porjectsData":"data/porjectsData.js","./Projects":"components/Projects.js"}],"components/Skills.js":[function(require,module,exports) {
@@ -32368,7 +32366,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  // background-color : #e53170;\n  box-shadow : 1px 1px 5px #fffffe;\n  max-width : 450px;\n  padding : 1rem;\n  h3 {\n    color : #fffffe;\n    padding-block : 0.5em;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  margin-top : 2rem;\n  box-shadow : 1px 1px 5px #fffffe;\n  max-width : 450px;\n  padding : 1rem;\n  h3 {\n    color : #fffffe;\n    padding-block : 0.5em;\n  }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -32476,7 +32474,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63193" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52110" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
