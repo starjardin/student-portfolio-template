@@ -3,7 +3,6 @@ import ProjectsStyle from './styles/ProjectsStyle'
 
 
 export default function Projects({ projects }) {
-  console.log(projects);
   return (
     <ProjectsStyle>
       <header>
@@ -15,12 +14,12 @@ export default function Projects({ projects }) {
             <img src={ project.img } alt="project image"/>
           </div>
           <div>
-            <h4>{ project.tools }</h4>
-            <h4>{ project.title }</h4>
+            <h4 className="tools">{ project.tools }</h4>
+            <h4 className="title">{ project.title }</h4>
             <p>{ project.description}</p>
             <div className="anchor-container">
-              <a className="anchor">Demo</a>
-              <a className="anchor">Code</a>
+              <a className="anchor" href={project.demo}>Demo</a>
+              <a className="anchor" href={project.code}>Code</a>
             </div>
           </div>
         </div>

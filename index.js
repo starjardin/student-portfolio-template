@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Header from './components/header'
 import PersonalDetails from './components/PersonalDetails'
-import Projects from './components/Projects'
 import ProjectsType from './components/ProjectsType'
 import Skills from './components/Skills'
 
